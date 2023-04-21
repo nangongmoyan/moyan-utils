@@ -4,7 +4,15 @@
  * @param {Array|string} path 获取属性的路径
  * @param {*} [defaultValue] 为“未定义”解析值返回的值
  * @returns {*} 返回解析值
+ * @example
+ * const object = { 'a': [{ 'b': { 'c': 3 } }] }
+ * get(object, 'a[0].b.c') => 3
+ *
+ * get(object, ['a', '0', 'b', 'c']) => 3
+ *
+ * get(object, 'a.b.c', 'default') => 'default'
  */
+
 export function get(
   source: { [key: string]: any },
   path: string | string[],

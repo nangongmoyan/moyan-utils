@@ -1,8 +1,13 @@
 /**
  * 判断空对象
- * @param obj
- * @returns
+ * @param {Object} source 需要验证的对象
+ * @returns {Boolean} 返回布尔值
+ * @example
+ * isEmpty({}) => true
+ * isEmpty({ a: 1 }) => false
  */
-export function isEmpty(obj: Object) {
-  return Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;
+function isEmpty(source: Object) {
+  return Reflect.ownKeys(source).length === 0 && source.constructor === Object;
 }
+
+console.log(isEmpty({ a: 1 }));
