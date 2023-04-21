@@ -6,7 +6,7 @@
  * isEmpty({}) => true
  * isEmpty({ a: 1 }) => false
  */
-function isEmpty(source: Object) {
+export function isEmpty(source: Object) {
   return Reflect.ownKeys(source).length === 0 && source.constructor === Object;
 }
 
