@@ -29,7 +29,10 @@ import { CloneType } from './types';
  * const date1 = new Date() => 2023-04-21T15:17:57.128Z
  * const date2 = cloneDeep(date1) => 2023-04-21T15:17:57.128Z
  */
-function cloneDeep<T extends unknown>(source: T, cache = new WeakMap()): T {
+export function cloneDeep<T extends unknown>(
+  source: T,
+  cache = new WeakMap()
+): T {
   /** 如果不是对象或者是null，直接返回 */
   if (typeof source !== 'object' || source == null) {
     return source;
