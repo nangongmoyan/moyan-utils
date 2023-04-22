@@ -2,6 +2,7 @@ export * from './get';
 export * from './chunk';
 export * from './flatten';
 export * from './isEmpty';
+export * from './memoize';
 export * from './cloneDeep';
 export * from './randomColor';
 export * from './formatNumber';
