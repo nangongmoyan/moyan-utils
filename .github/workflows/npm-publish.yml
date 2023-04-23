@@ -9,10 +9,10 @@ on:
     branches:
       - main
 
-# 默认shell
-defaults:
-  run:
-    shell: bash
+# # 默认shell
+# defaults:
+#   run:
+#     shell: bash
 
 # 任务，定义个changelog 的任务
 jobs:
@@ -35,6 +35,7 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: npm install
+
       # 打包
       - name: Build Packages
         run: npm run build
