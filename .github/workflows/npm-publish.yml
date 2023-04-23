@@ -17,9 +17,9 @@ defaults:
 # 任务，定义个changelog 的任务
 jobs:
   changelog:
-    name:Changelog PR or Release
+    # name:Changelog PR or Release
     # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
-    if: ${{ github.repository_owner == 'nangongmoyan' }}
+    # if: ${{ github.repository_owner == 'nangongmoyan' }}
     runs-on: ubuntu-latest
     steps:
       # name:  当前 step 的名字
@@ -34,11 +34,10 @@ jobs:
 
       # 安装依赖
       - name: Install dependencies
-        run: npm install 
+        run: npm install
       # 打包
       - name: Build Packages
-        run: npm run build 
-
+        run: npm run build
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
