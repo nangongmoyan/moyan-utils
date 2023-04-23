@@ -1,5 +1,11 @@
 # moyan-utils
 
+## 0.0.11
+
+### Patch Changes
+
+- 7ffd3aa: change cloneDeep and add getJSDataType isJSDataType
+
 ## 0.0.10
 
 ### Patch Changes
