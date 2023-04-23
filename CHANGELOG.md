@@ -1,5 +1,11 @@
 # moyan-utils
 
+## 0.0.13
+
+### Patch Changes
+
+- b5cc9b3: add pick and omit
+
 ## 0.0.12
 
 ### Patch Changes
