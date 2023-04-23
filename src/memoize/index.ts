@@ -42,5 +42,3 @@ export function memoize(
 
   return memoized;
 }
-
-console.log('111');
