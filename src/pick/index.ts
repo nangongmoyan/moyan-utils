@@ -8,6 +8,7 @@
  * pick(object, ['a', 'c']) => { a: 1, c: 3 }
  */
 export function pick<T, K extends keyof T>(object: T, paths: K[] = []) {
+  /** 筛出给定的key */
   return paths.reduce((acc, key) => {
     (object as Object).hasOwnProperty(key) && (acc[key] = object[key]);
     return acc;

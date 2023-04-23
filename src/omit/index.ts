@@ -8,6 +8,7 @@
  * omit(object, ['a', 'c']) => { b: '2' }
  */
 export function omit<T, K extends keyof T>(object: T, paths: K[]) {
+  /** 获取对象的属性数组，然后筛出给定的key */
   return (Object.keys(object as Object) as K[]).reduce((acc, key) => {
     if (!paths.includes(key)) {
       (object as Object).hasOwnProperty(key) && (acc[key] = object[key]);
