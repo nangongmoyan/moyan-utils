@@ -1,4 +1,5 @@
 export * from './get';
+export * from './pick';
 export * from './chunk';
 export * from './flatten';
 export * from './isEmpty';
