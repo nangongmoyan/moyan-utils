@@ -17,9 +17,7 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why",
-    "changeset": "changeset",
-    "version": "changeset version && npm install"
+    "analyze": "size-limit --why"
   },
   "husky": {
     "hooks": {
