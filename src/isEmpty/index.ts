@@ -9,5 +9,3 @@
 export function isEmpty(source: Object) {
   return Reflect.ownKeys(source).length === 0 && source.constructor === Object;
 }
-
-console.log(isEmpty({ a: 1 }));

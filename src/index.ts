@@ -6,4 +6,5 @@ export * from './memoize';
 export * from './cloneDeep';
 export * from './randomColor';
 export * from './formatNumber';
+export * from './isJSDataType';
 export * from './getJSDataType';
