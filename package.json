@@ -22,7 +22,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "changeset": "changeset",
-    "version": "changeset version && pnpm install"
+    "version": "changeset version && npm install"
   },
   "husky": {
     "hooks": {

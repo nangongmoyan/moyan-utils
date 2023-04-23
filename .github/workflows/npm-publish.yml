@@ -9,10 +9,10 @@ on:
     branches:
       - main
 
-# # 默认shell
-# defaults:
-#   run:
-#     shell: bash
+# 默认shell
+defaults:
+  run:
+    shell: bash
 
 # 任务，定义个changelog 的任务
 jobs:
@@ -30,7 +30,6 @@ jobs:
       - name: Setup Node.js v16 # 设置 Node.js 的环境
         uses: actions/setup-node@v3
         with:
-          # registry-url: https://registry.npmjs.org/
           node-version: 16
           # cache: 'npm'
 
