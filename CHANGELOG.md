@@ -1,5 +1,11 @@
 # moyan-utils
 
+## 0.0.12
+
+### Patch Changes
+
+- 776d28e: remove log and export isJSDataType
+
 ## 0.0.11
 
 ### Patch Changes
