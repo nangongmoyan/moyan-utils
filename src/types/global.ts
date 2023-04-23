@@ -1,4 +1,4 @@
-export enum CloneType {
+export enum JSDataType {
   Object = 'Object',
   Array = 'Array',
   Date = 'Date',
@@ -14,4 +14,4 @@ export enum CloneType {
   Map = 'Map',
 }
 
-export type _CloneType = keyof typeof CloneType;
+export type _JSDataType = keyof typeof JSDataType;
