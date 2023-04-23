@@ -21,12 +21,13 @@ npm i moyan-utils
 
   - chunk - 数组拆分
   - get - 获取数据的值
-  - omit - 生成忽略属性的新对象
-  - pick - 生成选中属性的新对象
   - flatten - 数组扁平化
   - cloneDeep - 数据深拷贝
+  - omit - 生成忽略属性的新对象
+  - pick - 生成选中属性的新对象
   - getJSDataType - 获取数据类型
   - formatNumber - 数字千分位展示
+  - pickBy - 生成经 predicate 判断为真值的属性的对象
 
 - 高级函数
 
