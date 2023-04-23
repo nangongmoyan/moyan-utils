@@ -3,34 +3,82 @@
 
 name: Node.js Package
 
+# 触发时机，在 main 分支 push 操作触发
 on:
-  push: #指定触发事件
+  push:
     branches:
-      - main #指定触发action的分支
+      - main
 
+# 默认shell
+defaults:
+  run:
+    shell: bash
+
+# 任务，定义个changelog 的任务
 jobs:
-  main:
+  changelog:
+    name:Changelog PR or Release
+    # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
+    if: ${{ github.repository_owner == 'nangongmoyan' }}
     runs-on: ubuntu-latest
     steps:
       # name:  当前 step 的名字
-      - name: Checkout # 获取分支的代码和提交记录
-        uses: actions/checkout@v3
+
+      # 设置 Node
       - name: Setup Node.js v16 # 设置 Node.js 的环境
         uses: actions/setup-node@v3
         with:
+          registry-url: https://registry.npmjs.org/
           node-version: 16
+          cache: 'npm'
 
-      - name: Install
-        run: npm install # 安装依赖
+      # 安装依赖
+      - name: Install dependencies
+        run: npm install 
+      # 打包
+      - name: Build Packages
+        run: npm run build 
 
-      - name: Build
-        run: npm run build # 打包
 
-      - name: Publish to NPM # 推送到 NPM 上
-        uses: actions/setup-node@v3
+      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/ # 设置发包npm地址仓库
-      - run: npm publish # 执行发布
+          # 执行更新版本和发布的命令
+          version: npm run version
+          publish: npm exec changeset publish
+          commit: '[ci] release'
+          title: '[ci] release'
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 刚刚设置的 NPM_TOKEN
+          # 这里需要几个 Token 变量
+          # GITHUB_TOKEN 是 CI 里自带的默认 token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN 需要稍后在 npm 网站生成。
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+# jobs:
+#   main:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # name:  当前 step 的名字
+#       - name: Checkout # 获取分支的代码和提交记录
+#         uses: actions/checkout@v3
+#       - name: Setup Node.js v16 # 设置 Node.js 的环境
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+
+#       - name: Install
+#         run: npm install # 安装依赖
+
+#       - name: Build
+#         run: npm run build # 打包
+
+#       - name: Publish to NPM # 推送到 NPM 上
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+#           registry-url: https://registry.npmjs.org/ # 设置发包npm地址仓库
+#       - run: npm publish # 执行发布
+#         env:
+#           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 刚刚设置的 NPM_TOKEN

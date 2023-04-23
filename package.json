@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,7 +17,9 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "changeset": "changeset",
+    "version": "changeset version && npm install"
   },
   "husky": {
     "hooks": {
@@ -52,6 +54,7 @@
   },
   "homepage": "https://github.com/nangongmoyan/moyan-utils#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@size-limit/preset-small-lib": "^8.2.4",
     "husky": "^8.0.3",
     "size-limit": "^8.2.4",
