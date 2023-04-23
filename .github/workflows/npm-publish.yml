@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js v16 # 设置 Node.js 的环境
         uses: actions/setup-node@v3
         with:
-          registry-url: https://registry.npmjs.org/
+          # registry-url: https://registry.npmjs.org/
           node-version: 16
           # cache: 'npm'
 
