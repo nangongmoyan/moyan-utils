@@ -1,5 +1,11 @@
 # moyan-utils
 
+## 0.0.15
+
+### Patch Changes
+
+- 84ce575: add omitBy and pickBy
+
 ## 0.0.14
 
 ### Patch Changes
