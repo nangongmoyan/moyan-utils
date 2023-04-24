@@ -27,6 +27,7 @@ npm i moyan-utils
   - pick - 生成选中属性的新对象
   - getJSDataType - 获取数据类型
   - formatNumber - 数字千分位展示
+  - omitBy - 生成经 predicate 判断为假值的属性的对象
   - pickBy - 生成经 predicate 判断为真值的属性的对象
 
 - 高级函数
