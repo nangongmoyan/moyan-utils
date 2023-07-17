@@ -15,7 +15,7 @@ npm i moyan-utils
 - 常用判断函数
 
   - isEmpty - 判断空对象
-  - isJSDataType - 判断数据类型
+  - isMatchDataType - 判断数据类型
 
 - 数据结构相关
 
@@ -25,7 +25,7 @@ npm i moyan-utils
   - cloneDeep - 数据深拷贝
   - omit - 生成忽略属性的新对象
   - pick - 生成选中属性的新对象
-  - getJSDataType - 获取数据类型
+  - getDataType - 获取数据类型
   - formatNumber - 数字千分位展示
   - omitBy - 生成经 predicate 判断为假值的属性的对象
   - pickBy - 生成经 predicate 判断为真值的属性的对象
