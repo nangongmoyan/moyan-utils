@@ -10,6 +10,6 @@ export * from './isEmpty';
 export * from './memoize';
 export * from './cloneDeep';
 export * from './randomColor';
+export * from './getDataType';
 export * from './formatNumber';
-export * from './isJSDataType';
-export * from './getJSDataType';
+export * from './isMatchDataType';

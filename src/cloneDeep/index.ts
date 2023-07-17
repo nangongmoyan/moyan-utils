@@ -1,5 +1,5 @@
-import { JSDataType } from '../types';
-import { isJSDataType } from '../isJSDataType';
+import { DataType } from '../types';
+import { isMatchDataType } from '../isMatchDataType';
 
 /**
  * 深拷贝
@@ -48,8 +48,8 @@ export function cloneDeep<T extends unknown>(
 
   /** 如果是日期对象，直接返回一个新的日期对象 */
   if (
-    isJSDataType(JSDataType.Date, source) ||
-    isJSDataType(JSDataType.RegExp, source)
+    isMatchDataType(DataType.Date, source) ||
+    isMatchDataType(DataType.RegExp, source)
   ) {
     param = source;
   }
@@ -58,8 +58,8 @@ export function cloneDeep<T extends unknown>(
 
   /** 如果是数组或对象，需要遍历 */
   if (
-    isJSDataType(JSDataType.Array, source as object) ||
-    isJSDataType(JSDataType.Object, source as object)
+    isMatchDataType(DataType.Array, source as object) ||
+    isMatchDataType(DataType.Object, source as object)
   ) {
     for (let key in source) {
       if ((source as object).hasOwnProperty(key)) {
@@ -69,14 +69,14 @@ export function cloneDeep<T extends unknown>(
   }
 
   /** 如果是Set */
-  if (isJSDataType(JSDataType.Set, source)) {
+  if (isMatchDataType(DataType.Set, source)) {
     for (let value of source as unknown as Set<T>) {
       (result as Set<T>).add(cloneDeep(value, cache));
     }
   }
 
   /** 如果是Map */
-  if (isJSDataType(JSDataType.Map, source)) {
+  if (isMatchDataType(DataType.Map, source)) {
     for (let [key, value] of source as unknown as Map<T, T>) {
       (result as Map<T, T>).set(cloneDeep(key, cache), cloneDeep(value, cache));
     }
