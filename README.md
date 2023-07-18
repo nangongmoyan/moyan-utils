@@ -48,25 +48,25 @@ git clone git@github.com:nangongmoyan/moyan-utils.git
 
 2.创建新功能函数对应的分支
 
-  2.1.通过远程仓库链接中创建（**推荐**），这样子能确保从main分支切出来的分支是最新的
+  - 通过远程仓库链接中创建（**推荐**），这样子能确保从main分支切出来的分支是最新的
 
   [branches链接](https://github.com/nangongmoyan/moyan-utils/branches)
 
   ![创建新分支](image.png)
 
-  2.2.通过命令创建分支
+  - 通过命令创建分支
   ```
   git checkout -b newBranch
   ```
 
-3. Build
+3.Build
 
   功能函数编写测试完成后，执行build
   ```
   npm run build
   ```
   
-4. Push
+4.Push
 
   在执行`npm run build`后，修改package.json中version值（将值+1），然后进行当前分支push到远程仓库。
   功能是否上线，后续管理员会进行审核，在审核通过后进行merge，github 会自动执行npm-publish.yml文件将新版本更新到npm上
