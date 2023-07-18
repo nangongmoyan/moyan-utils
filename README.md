@@ -29,7 +29,7 @@ npm i moyan-utils
   - omitBy - 生成经 predicate 判断为假值的属性的对象
   - pick - 生成选中属性的新对象
   - pickBy - 生成经 predicate 判断为真值的属性的对象
-**
+
 - 高级函数
 
   - memoize - 记忆函数
