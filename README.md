@@ -1,6 +1,6 @@
 # moyan-utils
 
-##### 记录一些复杂业务场景使用的 js 类库。
+##### 记录一些复杂业务场景使用的 js 类库
 
 > 欢迎有想法, 热衷技术的小伙伴一起共建啦! 致力于打造最好用的前端工具库, 您可以提 issue 或者 pr 来共建项目，谢谢.
 
@@ -29,7 +29,7 @@ npm i moyan-utils
   - omitBy - 生成经 predicate 判断为假值的属性的对象
   - pick - 生成选中属性的新对象
   - pickBy - 生成经 predicate 判断为真值的属性的对象
-**
+
 - 高级函数
 
   - memoize - 记忆函数
@@ -38,4 +38,32 @@ npm i moyan-utils
 
   - getRandomColor - 获取随机颜色
 
-## API DOC
+## To Develop
+
+1.先将项目远程仓库克隆到本地
+
+```
+git clone git@github.com:nangongmoyan/moyan-utils.git
+```
+
+2.创建新功能函数对应的分支
+
+  2.1 通过远程仓库链接中创建（**推荐**），这样子能确保从main分支切出来的分支是最新的
+  [branches链接](https://github.com/nangongmoyan/moyan-utils/branches)
+  ![创建新分支](image.png)
+
+  2.2 通过命令创建分支
+  ```
+  git checkout -b newBranch
+  ```
+3. Build
+
+  功能函数编写测试完成后，执行build
+  ```
+  npm run build
+  ```
+4. Push
+
+  在执行`npm run build`后，修改package.json中version值（将值+1），然后进行当前分支push到远程仓库。
+  功能是否上线，后续管理员会进行审核，在审核通过后进行merge，github 会自动执行npm-publish.yml文件将新版本更新到npm上
+
