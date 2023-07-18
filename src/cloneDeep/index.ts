@@ -3,9 +3,9 @@ import { isMatchDataType } from '../isMatchDataType';
 
 /**
  * 深拷贝
- * @param {T} obj 要拷贝的对象
+ * @param {T} obj 要拷贝的数据源
  * @param {WeakMap} cache 缓存的值
- * @returns {T} 拷贝后的对象
+ * @returns {T} 拷贝后的数据
  * @example
  * const obj1 = { a: 1, b: 2, c: { d: 3, e: 4 }, f: 5, g: { h: 6 } }
  * const obj2 = cloneDeep(obj1) => { a: 1, b: 2, c: { d: 3, e: 4 }, f: 5, g: { h: 6 } }

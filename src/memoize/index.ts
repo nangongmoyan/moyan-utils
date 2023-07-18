@@ -1,5 +1,5 @@
 /**
- *
+ * 记忆函数
  * @param {Function} fn 需要缓存化的函数
  * @param {Function} resolver 这个函数的返回值作为缓存的 key
  * @returns {Function} 返回缓存化后的函数

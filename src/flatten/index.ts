@@ -1,3 +1,6 @@
+import { DataType } from "../types";
+import { isMatchDataType } from "../isMatchDataType";
+
 /**
  * 数组扁平化
  * @param {T[]} source  要扁平化的数组
@@ -43,9 +46,7 @@ export function flatten<T>(
   return data.reduce((acc, cur) => {
     let tmp: T | T[] = cur;
     const propertyValue = generateValue?.(cur);
-    if (Object.prototype.toString.call(cur) === '[object Object]') {
-      propertyValue && (tmp = propertyValue);
-    }
+    isMatchDataType(DataType.Object, cur) && propertyValue && (tmp = propertyValue);
 
     if (Array.isArray(tmp)) {
       const prev = propertyValue ? acc.concat(cur) : acc;

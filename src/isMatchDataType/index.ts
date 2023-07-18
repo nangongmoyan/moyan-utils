@@ -2,7 +2,7 @@ import { _DataType } from '../types';
 import { getDataType } from '../getDataType';
 
 /**
- * 检测数据类型
+ * 判断数据是否匹配相应的数据类型
  * @param {_DataType} type 数据类型
  * @param {T} source 检测的数据源
  * @returns {boolean} 返回布尔值

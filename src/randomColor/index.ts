@@ -1,5 +1,5 @@
 /**
- * 随机颜色
+ * 获取随机颜色
  * @returns {string} 16进制的颜色值
  * @example
  * getRandomColor() => #3617ad
