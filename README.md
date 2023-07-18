@@ -20,14 +20,14 @@ npm i moyan-utils
 - 数据结构相关
 
   - chunk - 数组拆分
-  - get - 获取数据的值
-  - flatten - 数组扁平化
   - cloneDeep - 数据深拷贝
-  - omit - 生成忽略属性的新对象
-  - pick - 生成选中属性的新对象
-  - getDataType - 获取数据类型
+  - flatten - 数组扁平化
   - formatNumber - 数字千分位展示
+  - get - 获取数据的值
+  - getDataType - 获取数据类型
+  - omit - 生成忽略属性的新对象
   - omitBy - 生成经 predicate 判断为假值的属性的对象
+  - pick - 生成选中属性的新对象
   - pickBy - 生成经 predicate 判断为真值的属性的对象
 
 - 高级函数
