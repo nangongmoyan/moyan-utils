@@ -7,7 +7,7 @@
 ## Installation
 
 ```
-npm i moyan-utils
+npm install moyan-utils
 ```
 
 ## All Function List
